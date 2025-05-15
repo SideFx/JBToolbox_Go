@@ -1,5 +1,5 @@
 //----------------------------------------------------------------------------------------------------------
-// CRC64 (reversed ECMA-182 & reversed ISO) Go implementation based on Wikipedia's description
+// CRC64 (reversed ECMA-182 & reversed ISO) Go implementation based on Wikipedia's web site
 // https://en.wikipedia.org/wiki/Cyclic_redundancy_check
 // (w) 2025 by Jan Buchholz
 //----------------------------------------------------------------------------------------------------------

@@ -7,6 +7,9 @@ package main
 import (
 	"JBToolbox/JBSelftest"
 	"fmt"
+	"os"
+	"os/exec"
+	"runtime"
 )
 
 func main() {
@@ -30,6 +33,7 @@ func main() {
 		key = ""
 		print("\nPlease enter an option: ")
 		_, _ = fmt.Scanln(&key)
+		clearScreen()
 		switch key {
 		case "a":
 			JBSelftest.JBAdler32Selftest()
@@ -62,5 +66,17 @@ func main() {
 		default:
 			println("Invalid input (press 'x' to exit)")
 		}
+	}
+}
+
+func clearScreen() {
+	if runtime.GOOS == "windows" {
+		cmd := exec.Command("cmd", "/c", "cls")
+		cmd.Stdout = os.Stdout
+		_ = cmd.Run()
+	} else {
+		cmd := exec.Command("clear")
+		cmd.Stdout = os.Stdout
+		_ = cmd.Run()
 	}
 }
